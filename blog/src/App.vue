@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Fetch data with API</h1>
+        <EmployeeList />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import EmployeeList from './components/EmployeeList'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    EmployeeList
   }
 }
 </script>
