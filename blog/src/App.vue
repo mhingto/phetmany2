@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <h1>Fetch data with API</h1>
         <EmployeeList />
+
+        <hr />
+
+        <PostComponent />
   </div>
 </template>
 
 <script>
-import EmployeeList from './components/EmployeeList'
+import EmployeeList from './components/EmployeeList';
+import PostComponent from './components/PostComponent';
 export default {
   name: 'App',
   components: {
-    EmployeeList
+    EmployeeList,
+    PostComponent
   }
 }
 </script>

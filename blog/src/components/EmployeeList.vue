@@ -1,6 +1,18 @@
 <template>
     <div>
         <h1>Employee List</h1>
+        <table border="1px">
+            <tr>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Age</th>
+            </tr>
+            <tr v-for="item in list" v-bind:key="item.id">
+                <td>{{item.employee_name}}</td>
+                <td>{{item.employee_salary}}</td>
+                <td>{{item.employee_age}}</td>
+            </tr>
+        </table>
     </div>
 </template>
 <script>
@@ -10,10 +22,14 @@
     Vue.use(VueAxios, axios)
     export default {
         name:"EmployeeList",
+        data(){
+            return{list:undefined}
+        },
         mounted() {
             Vue.axios.get('http://dummy.restapiexample.com/api/v1/employees')
             .then((resp)=>{
-                console.warn(resp)
+                this.list=resp.data.data;
+                console.warn(resp.data.data)
             })
         },
     }
